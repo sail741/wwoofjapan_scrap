@@ -135,6 +135,24 @@ def should_add_feeding(criteria, data):
     return True
 
 
+def get_island(region):
+    """
+    Get the island from the region
+    :param region: The region as it is displayed on the website
+    :return: Hokkaido, Shikoku, Kyushu or Honshuu
+    """
+    if region in ["Hokkaido"]:
+        return "Hokkaido"
+    elif region in ["Shikoku area"]:
+        return "Shikoku"
+    elif region in ["Kyushu area"]:
+        return "Kyushu"
+    elif region in ["Chubu area", "Chugoku area", "Kansai area", "Kanto area", "Tohoku area"]:
+        return "Honshuu"
+
+    return "N/A"
+
+
 def scrap(params):
     """
     Make the scrap for the params in script.py
@@ -194,7 +212,8 @@ def scrap(params):
                 if data is not None:
                     data = str(data.contents[0].encode('utf-8'))[2:-1]
                     list_data.append(data)
-
+            # We append the island in japan
+            list_data.append(get_island(list_data[8]))
             # We output the result
             f.write('%s\t%s\n' % (item_id, "\t".join(list_data)))
             qty_matched += 1
