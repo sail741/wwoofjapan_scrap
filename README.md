@@ -32,4 +32,7 @@ To get the data, you just need to run
 
     python script.py
     
-You can change the criteria for the research in the `script.py` by changing the `params` dictionary
+You can change the criteria for the research in the `script.py` by changing the `params["criterias"]` dictionary
+
+Also, you can change the columns in the output by editing the `params["list_columns]` array. 
+The content of this array must match with the Host "list_div" array or the column will output "N/A".  

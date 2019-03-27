@@ -2,88 +2,87 @@
 params_keep_all = {
     "output_file": "output.txt",
     "display_eta": True,
+    "list_columns": [
+        "id",
+        "qty_wwoofers",
+        "island",
+        "region",
+        "relation_wwoofers",
+        "feeding_restriction",
+        "tasks",
+        "date",
+        "city",
+        "prefecture",
+        "host_xp",
+        "staying_time",
+        "url"
+    ],
     "criterias": [
-        {
-            "_description": "The quantity of wwoofer allowed as text",
-            "div_id": "cbfv_293",
-            "required": False,
-            "type": "string",
-            "allowed_values": [],
-            "banned_values": []
-        },
-        {
-            "_description": "The relations between the wwoofer as text",
-            "div_id": "cbfv_296",
-            "required": False,
-            "type": "string",
-            "allowed_values": [],
-            "banned_values": []
-        },
-        {
-            "_description": "The date when the wwoofing is enabled as text",
-            "div_id": "cbfv_290",
-            "required": False,
-            "type": "string",
-            "allowed_values": [],
-            "banned_values": []
-        },
-        {
-            "_description": "Since how many years the hosts does wwoofing",
-            "div_id": "cbfv_542",
-            "required": False,
-            "type": "int",
-            "min_value": None,
-            "max_value": None
-        },
-        {
-            "_description": "What kind of feeding is allowed",
-            "div_id": "cbfv_318",
-            "required": False,
-            "type": "feeding",
-            "remove": False
-        }
     ]
 }
+
+
+params_keep_all_small_output = {
+    "output_file": "output.txt",
+    "display_eta": True,
+    "list_columns": [
+        "id",
+        "url"
+    ],
+    "criterias": [
+    ]
+}
+
 
 params_couple_with_restriction = {
     "output_file": "output.txt",
     "display_eta": True,
+    "list_columns": [
+        "id",
+        "qty_wwoofers",
+        "island",
+        "region",
+        "relation_wwoofers",
+        "feeding_restriction",
+        "tasks",
+        "date",
+        "city",
+        "prefecture",
+        "host_xp",
+        "staying_time",
+        "url"
+    ],
     "criterias": [
         {
-            "_description": "The quantity of wwoofer allowed as text",
-            "div_id": "cbfv_293",
+            "name": "qty_wwoofers",
             "required": True,
             "type": "string",
             "allowed_values": [],
             "banned_values": ["One only"]
         },
         {
-            "_description": "The relations between the wwoofer as text",
-            "div_id": "cbfv_296",
+            "name": "relation_wwoofers",
             "required": True,
             "type": "string",
             "allowed_values": ["couple", "different gender", "A wife & husband"],
             "banned_values": []
         },
         {
-            "_description": "The date when the wwoofing is enabled as text",
-            "div_id": "cbfv_290",
+            "name": "date",
             "required": True,
             "type": "string",
             "allowed_values": ["October", "Almost all year round", "All year round"],
             "banned_values": []
         },
         {
-            "_description": "Since how many years the hosts does wwoofing",
-            "div_id": "cbfv_542",
+            "name": "host_xp",
             "required": True,
             "type": "int",
             "min_value": 5,
             "max_value": None
         },
         {
-            "_description": "What kind of feeding is allowed",
-            "div_id": "cbfv_318",
+            "name": "feeding_restriction",
             "required": True,
             "type": "feeding",
             "remove": True
